@@ -36,7 +36,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       "id": "${uuid}",
       "aid": "2",
       "net": "ws",
-      "path": "/v2ray",
+      "path": "/oasistore",
       "type": "none",
       "host": "",
       "tls": "tls"
@@ -51,7 +51,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "id": "${uuid}",
       "aid": "2",
       "net": "ws",
-      "path": "/v2ray",
+      "path": "/oasistore",
       "type": "none",
       "host": "",
       "tls": "none"
@@ -66,7 +66,7 @@ cat>/etc/v2ray/$user-mkcp.json<<EOF
       "id": "${uuid}",
       "aid": "2",
       "net": "kcp",
-      "path": "/v2ray",
+      "path": "/oasistore",
       "type": "dtls",
       "host": "",
       "tls": "none"
@@ -94,7 +94,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 2"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /v2ray"
+echo -e "path           : /oasistore"
 echo -e "================================="
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "================================="

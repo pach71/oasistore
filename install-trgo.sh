@@ -81,7 +81,7 @@ cat <<EOF > /etc/trojan-go/config.json
   },
   "websocket": {
     "enabled": true,
-    "path": "/brody",
+    "path": "/oasistore",
     "host": "$domain"
   },
   "shadowsocks": {
