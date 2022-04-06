@@ -9,7 +9,7 @@ clear
 echo -e "${green} Please Wait, Proses...${NC}"
 sleep 5
 else
-echo "User premium Only ,Sila Contact Admin Bot😘"
+echo "KONTAK ADMIN"
 exit 0
 fi
 clear
@@ -31,18 +31,18 @@ echo -e "* IP VPS        : $IPVPS"
 echo -e "* DOMAIN        : ${domain}"
 echo -e ""
 echo -e "\e[1;33m═══════════════════════════════════════════════════=═══\e[0m'"
-echo -e "\e[1;33m                𝑆𝐶𝑅𝐼𝑃𝑇 𝑉𝑃𝑆 𝐹𝑂𝑅 𝐷𝐸𝐵𝐼𝐴𝑁 𝐴𝑁𝐷 𝑈𝐵𝑈𝑁𝑇𝑈 \e[0m" | lolcat
+echo -e "\e[1;33m                𝑆𝐶𝑅𝐼𝑃𝑇 𝑉𝑃𝑆 𝐷𝐸𝐵𝐼𝐴𝑁 𝐴𝑁𝐷 𝑈𝐵𝑈𝑁𝑇𝑈 \e[0m" | lolcat
 echo -e ""
 echo -e "\e[1;33m              __   __ ___  ___  ___   ___  _____ \e[0m" | lolcat
 echo -e "\e[1;33m              \ \ / /| _ \/ __|| _ ) / _ \|_   _|\e[0m" | lolcat
 echo -e "\e[1;33m               \ V / |  _/\__ \| _ \| (_) | | |  \e[0m" | lolcat
 echo -e "\e[1;33m                \_/  |_|  |___/|___/ \___/  |_|  \e[0m" | lolcat
 echo -e ""
-echo -e "\e[1;33m                       ✵✫ 𝑆𝐼𝑁𝐶𝐸 2021 ✫✵ \e[0m" | lolcat
+echo -e "\e[1;33m                       ✵✫ JUANGUSTAVVO ✫✵ \e[0m" | lolcat
 echo -e "\e[1;33m                      𝐴𝑈𝑇𝑂𝑆𝐶𝑅𝐼𝑃𝑇 𝑃𝑅𝐸𝑀𝐼𝑈𝑀 \e[0m" | lolcat
 echo -e ""
 echo -e "\e[1;33m=============================-Menu-=============================\e[0m" | lolcat
-echo -e "\e[1;33m*               Senarai Menu yang Disediakan\e[0m" | lolcat
+echo -e "\e[1;33m*               Menu yang Disediakan\e[0m" | lolcat
 echo -e ""
 echo -e "\e[1;33m=========================-Menu Protocol-========================\e[0m" | lolcat
 echo -e "\e[1;31m* [1]\e[0m  \e[1;32m: SSH & OVPN PANEL\e[0m"
@@ -182,6 +182,6 @@ exit
 menu
 ;;
 *)
-echo " Tolong masukkan nombor yang betul!!"
+echo " TOLONG MASUKAN NO YANG BENAR"
 ;;
 esac

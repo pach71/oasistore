@@ -30,19 +30,19 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 IZIN=$( curl https://raw.githubusercontent.com/juangustavvo/hayoloh/main/iptext.sh | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${green} ORAIT, IP VPS SUDAH DI KEY IN...${NC}"
+echo -e "${green} VALID!!, IP VPS SUDAH SESUAI LISENSI ${NC}"
 sleep 5
 else
 clear
-echo "sila contact admin untuk premium"
+echo "contact admin untuk premium"
 rm -f setup.sh
 
 echo '                          Hmm..                           '
 echo '                                                          '
 echo '                                                          '
 echo '                                                          '
-echo '                  AutoScript BY BotVPN                   '
-echo '                  Telegram t.me/onepiecevpncrew                   '
+echo '                  AutoScript BY JUANGUSTAVVO                   '
+echo '                  Telegram t.me/juangustavvo                   '
 sleep 20
 exit 0
 fi
