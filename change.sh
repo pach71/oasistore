@@ -46,7 +46,7 @@ port-sstp
 menu-xx
 ;;
 10)
-port-trgo
+port-xtrgo
 ;;
 11)
 clear
