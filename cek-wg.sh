@@ -62,5 +62,5 @@ listClients(){
 }
 listClients
 echo "-------------------------------";
-echo -e "Script By BOTVPN"
+echo -e "Script By Juangustavvo"
 

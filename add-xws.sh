@@ -9,7 +9,7 @@ clear
 echo -e "${green} Please Wait, Proses...${NC}"
 sleep 5
 else
-echo "User premium Only ,Sila Contact Admin Bot😘"
+echo "SCRIPT PREMIUM JVG"
 exit 0
 fi
 clear
