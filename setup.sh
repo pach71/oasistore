@@ -198,8 +198,8 @@ echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo ""
-echo "   - 1st Dev/Main            : BOTVPN"  | tee -a log-install.txt
-echo "   - Telegram                : t.me/onepiecevpncrew"  | tee -a log-install.txt
+echo "   - 1st Dev/Main            : JUANGUSTAVVO"  | tee -a log-install.txt
+echo "   - Telegram                : t.me/juangustavvo"  | tee -a log-install.txt
 echo ""
 
 sleep 3
