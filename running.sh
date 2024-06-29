@@ -17,7 +17,7 @@ else
     sleep 1
 fi
 # Ram Usage
-total_r2am=`grep "MemAvailable: " /proc/meminfo | awk '{ print $2}'`
+total_r2am=` grep "MemAvailable: " /proc/meminfo | awk '{ print $2}'`
 MEMORY=$($total_r2am/1024)
 # VPS ISP INFORMATION
 ITAM='\033[0;30m'
