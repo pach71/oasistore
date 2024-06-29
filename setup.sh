@@ -56,6 +56,7 @@ read -p "Hostname / Domain: " host
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
 echo "$host" >> /etc/v2ray/domain
+echo "$host" >> /root/domain
 clear
 echo '============================================='
 echo '        Installing SSH & OPENVPN '

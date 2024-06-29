@@ -146,7 +146,7 @@ rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
 # install stunnel
-apt install stunnel4 python-is-python3 -y
+apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
 client = no
@@ -176,6 +176,7 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 # konfigurasi stunnel
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
+systemctl enable stunnel4
 
 #OpenVPN
 wget https://raw.githubusercontent.com/pach71/oasistore/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
