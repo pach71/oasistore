@@ -73,7 +73,7 @@ clear
 cd 
 
 # Buat Service Untuk OHP
-wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
+wget https://raw.githubusercontent.com/pach71/oasistore/main/ohpserver-linux32.zip
 unzip ohpserver-linux32.zip
 rm ohpserver-linux32.zip
 mv ohpserver /usr/local/bin/
