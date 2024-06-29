@@ -4,16 +4,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/juangustavvo/hayoloh/main/iptext.sh | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${green} Please Wait, Proses...${NC}"
-sleep 5
-else
-echo "SCRIPT PREMIUM JVG"
-exit 0
-fi
-clear
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -31,7 +21,7 @@ organizationalunit=WONOGIRI@BOWO.COM
 commonname=BOWOSERVER.MY.ID
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/juangustavvo/oasistore/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/pach71/oasistore/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -98,14 +88,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/juangustavvo/oasistore/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/pach71/oasistore/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/juangustavvo/oasistore/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/pach71/oasistore/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/juangustavvo/oasistore/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/pach71/oasistore/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -135,7 +125,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/juangustavvo/oasistore/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/pach71/oasistore/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -189,7 +179,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/juangustavvo/oasistore/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/pach71/oasistore/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -227,58 +217,58 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/juangustavvo/oasistore/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/juangustavvo/oasistore/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/juangustavvo/oasistore/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/juangustavvo/oasistore/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/juangustavvo/oasistore/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/juangustavvo/oasistore/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/juangustavvo/oasistore/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/juangustavvo/oasistore/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/juangustavvo/oasistore/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/juangustavvo/oasistore/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/juangustavvo/oasistore/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/juangustavvo/oasistore/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/juangustavvo/oasistore/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/juangustavvo/oasistore/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/juangustavvo/oasistore/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/juangustavvo/oasistore/main/tendang.sh"
-wget -O change-port "https://raw.githubusercontent.com/juangustavvo/oasistore/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-vless.sh"
-wget -O port-xray "https://raw.githubusercontent.com/juangustavvo/oasistore/main/port-xray.sh"
-wget -O wbmn "https://raw.githubusercontent.com/juangustavvo/oasistore/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/xp.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-vless.sh"
-wget -O menu-l2tp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-l2tp.sh"
-wget -O menu-pptp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-pptp.sh"
-wget -O menu-sstp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-sstp.sh"
-wget -O menu-ss "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-ss.sh"
-wget -O menu-ssr "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-ssr.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-trojan.sh"
-wget -O menu-wg "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-wg.sh"
-wget -O menu-ssh "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-ssh.sh"
-wget -O menu-xray "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-xray.sh"
-wget -O running "https://raw.githubusercontent.com/juangustavvo/oasistore/main/running.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-trgo.sh"
-wget -O add-dom "https://raw.githubusercontent.com/juangustavvo/oasistore/main/cf/add-dom.sh"
-wget -O add-cff "https://raw.githubusercontent.com/juangustavvo/oasistore/main/cf/add-cff.sh"
-wget -O add-cfh "https://raw.githubusercontent.com/juangustavvo/oasistore/main/cf/add-cfh.sh"
-wget -O menu-cf "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-cf.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/juangustavvo/oasistore/main/kernel-updt.sh"
-wget -O autoreboot "https://raw.githubusercontent.com/juangustavvo/oasistore/main/autoreboot.sh"
-wget -O update "https://raw.githubusercontent.com/juangustavvo/oasistore/main/update.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-trgo.sh"
-wget -O menu-xx "https://raw.githubusercontent.com/juangustavvo/oasistore/main/menu-xx.sh"
-wget -O bbr "https://raw.githubusercontent.com/juangustavvo/oasistore/main/bbr.sh"
+wget -O add-host "https://raw.githubusercontent.com/pach71/oasistore/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/pach71/oasistore/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/pach71/oasistore/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/pach71/oasistore/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/pach71/oasistore/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/pach71/oasistore/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/pach71/oasistore/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/pach71/oasistore/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/pach71/oasistore/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/pach71/oasistore/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/pach71/oasistore/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/pach71/oasistore/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/pach71/oasistore/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/pach71/oasistore/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/pach71/oasistore/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/pach71/oasistore/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/pach71/oasistore/main/tendang.sh"
+wget -O change-port "https://raw.githubusercontent.com/pach71/oasistore/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/pach71/oasistore/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/pach71/oasistore/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/pach71/oasistore/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/pach71/oasistore/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/pach71/oasistore/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/pach71/oasistore/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/pach71/oasistore/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/pach71/oasistore/main/port-vless.sh"
+wget -O port-xray "https://raw.githubusercontent.com/pach71/oasistore/main/port-xray.sh"
+wget -O wbmn "https://raw.githubusercontent.com/pach71/oasistore/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/pach71/oasistore/main/xp.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/pach71/oasistore/main/menu-vmess.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/pach71/oasistore/main/menu-vless.sh"
+wget -O menu-l2tp "https://raw.githubusercontent.com/pach71/oasistore/main/menu-l2tp.sh"
+wget -O menu-pptp "https://raw.githubusercontent.com/pach71/oasistore/main/menu-pptp.sh"
+wget -O menu-sstp "https://raw.githubusercontent.com/pach71/oasistore/main/menu-sstp.sh"
+wget -O menu-ss "https://raw.githubusercontent.com/pach71/oasistore/main/menu-ss.sh"
+wget -O menu-ssr "https://raw.githubusercontent.com/pach71/oasistore/main/menu-ssr.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/pach71/oasistore/main/menu-trojan.sh"
+wget -O menu-wg "https://raw.githubusercontent.com/pach71/oasistore/main/menu-wg.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/pach71/oasistore/main/menu-ssh.sh"
+wget -O menu-xray "https://raw.githubusercontent.com/pach71/oasistore/main/menu-xray.sh"
+wget -O running "https://raw.githubusercontent.com/pach71/oasistore/main/running.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/pach71/oasistore/main/menu-trgo.sh"
+wget -O add-dom "https://raw.githubusercontent.com/pach71/oasistore/main/cf/add-dom.sh"
+wget -O add-cff "https://raw.githubusercontent.com/pach71/oasistore/main/cf/add-cff.sh"
+wget -O add-cfh "https://raw.githubusercontent.com/pach71/oasistore/main/cf/add-cfh.sh"
+wget -O menu-cf "https://raw.githubusercontent.com/pach71/oasistore/main/menu-cf.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/pach71/oasistore/main/kernel-updt.sh"
+wget -O autoreboot "https://raw.githubusercontent.com/pach71/oasistore/main/autoreboot.sh"
+wget -O update "https://raw.githubusercontent.com/pach71/oasistore/main/update.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/pach71/oasistore/main/menu-trgo.sh"
+wget -O menu-xx "https://raw.githubusercontent.com/pach71/oasistore/main/menu-xx.sh"
+wget -O bbr "https://raw.githubusercontent.com/pach71/oasistore/main/bbr.sh"
 chmod +x bbr
 chmod +x menu-xx
 chmod +x menu-trgo

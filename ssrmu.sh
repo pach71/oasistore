@@ -631,8 +631,8 @@ View_Log(){
 }
 Update_Shell(){
 	echo -e "The current version is [$ {sh_ver}], start checking for the latest version ... "
-	sh_new_ver=$(wget --no-check-certificate -qO- "https://raw.githubusercontent.com/juangustavvo/oasistore/main/ssrrmu.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
-	[[ -z ${sh_new_ver} ]] && sh_new_ver=$(wget --no-check-certificate -qO- "https://raw.githubusercontent.com/juangustavvo/oasistore/main/ssrrmu.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+	sh_new_ver=$(wget --no-check-certificate -qO- "https://raw.githubusercontent.com/pach71/oasistore/main/ssrrmu.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+	[[ -z ${sh_new_ver} ]] && sh_new_ver=$(wget --no-check-certificate -qO- "https://raw.githubusercontent.com/pach71/oasistore/main/ssrrmu.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} Failed to detect the latest version! " && exit 0
 	if [[ ${sh_new_ver} != ${sh_ver} ]]; then
 		echo -e "Versi baru ditemukan[ ${sh_new_ver} ]，Do you want to be updated? [Y/n]"
@@ -641,7 +641,7 @@ Update_Shell(){
 		if [[ ${yn} == [Yy] ]]; then
 			cd "${file}"
 			if [[ $sh_new_type == "github" ]]; then
-				wget -N --no-check-certificate https://raw.githubusercontent.com/juangustavvo/oasistore/main/ssrrmu.sh && chmod +x ssrrmu.sh
+				wget -N --no-check-certificate https://raw.githubusercontent.com/pach71/oasistore/main/ssrrmu.sh && chmod +x ssrrmu.sh
 			fi
 			echo -e "The Script Has Been Updated To The Latest Version..."
 		else

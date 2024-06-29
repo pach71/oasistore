@@ -3,16 +3,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/juangustavvo/hayoloh/main/iptext.sh | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${green} Please Wait, Proses...${NC}"
-sleep 5
-else
-echo "User premium Only ,Sila Contact Admin Bot😘"
-exit 0
-fi
-clear
 echo Installing Websocket-SSH AUTOSCRIPT BY BOTVPN
 sleep 1
 echo Cek Hak Akses...
@@ -21,16 +11,16 @@ cd
 cd /etc/systemd/system/
 
 #Install system auto run
-wget -O /etc/systemd/system/ws-ssh.service https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-ssh.service && chmod +x /etc/systemd/system/ws-ssh.service
-wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-dropbear.service && chmod +x /etc/systemd/system/ws-dropbear.service
-wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-ovpn.service && chmod +x /etc/systemd/system/ws-ovpn.service
-wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-stunnel.service && chmod +x /etc/systemd/system/ws-stunnel.service
+wget -O /etc/systemd/system/ws-ssh.service https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-ssh.service && chmod +x /etc/systemd/system/ws-ssh.service
+wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-dropbear.service && chmod +x /etc/systemd/system/ws-dropbear.service
+wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-ovpn.service && chmod +x /etc/systemd/system/ws-ovpn.service
+wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-stunnel.service && chmod +x /etc/systemd/system/ws-stunnel.service
 
 #Install Websocket-SSH
-wget -O /usr/local/bin/ws-ssh https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-openssh.py && chmod +x /usr/local/bin/ws-ssh
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-dropbear.py && chmod +x /usr/local/bin/ws-dropbear
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-ovpn.py && chmod +x /usr/local/bin/ws-ovpn
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/juangustavvo/oasistore/main/websocket/ws-tls.py && chmod +x /usr/local/bin/ws-stunnel
+wget -O /usr/local/bin/ws-ssh https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-openssh.py && chmod +x /usr/local/bin/ws-ssh
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-dropbear.py && chmod +x /usr/local/bin/ws-dropbear
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-ovpn.py && chmod +x /usr/local/bin/ws-ovpn
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/pach71/oasistore/main/websocket/ws-tls.py && chmod +x /usr/local/bin/ws-stunnel
 
 #Enable, Start & Restart ws-ssh service
 systemctl enable ws-ssh.service

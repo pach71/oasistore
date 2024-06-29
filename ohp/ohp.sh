@@ -4,16 +4,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/juangustavvo/hayoloh/main/iptext.sh | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${green} Please Wait, Proses...${NC}"
-sleep 5
-else
-echo "kontak admin jika ERROR!!"
-exit 0
-fi
-clear
+
 # Direct Proxy Squid For OpenVPN TCP
 
 RED='\e[1;31m'
@@ -37,7 +28,7 @@ Port_ssh='8383';
 
 # Installing ohp Server
 cd 
-wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/juangustavvo/oasistore/main/ohp/ohp"
+wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/pach71/oasistore/main/ohp/ohp"
 chmod +x /usr/local/bin/ohp
 
 # Buat File OpenVPN TCP OHP

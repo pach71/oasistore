@@ -3,16 +3,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/juangustavvo/hayoloh/main/iptext.sh | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${green} Please Wait, Proses...${NC}"
-sleep 5
-else
-echo "KONTAK ADMIN"
-exit 0
-fi
-clear
 echo -e ""
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
