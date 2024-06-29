@@ -166,7 +166,7 @@ echo "   - Trojan                  : 2087"  | tee -a log-install.txt
 echo "   - Trojan GO               : 2096"  | tee -a log-install.txt
 echo "   - Netflix Set ON"  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Malaysia (UTC +8)"  | tee -a log-install.txt
+echo "   - Timezone                : Asia/Tehran"  | tee -a log-install.txt
 echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo "   - IPtables                : [ON]"  | tee -a log-install.txt
