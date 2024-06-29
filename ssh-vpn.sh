@@ -146,7 +146,7 @@ rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
 # install stunnel
-apt install stunnel4 -y
+apt install stunnel4 python-is-python3 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
 client = no
