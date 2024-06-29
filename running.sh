@@ -18,7 +18,7 @@ else
 fi
 # Ram Usage
 total_r2am=` grep "MemAvailable: " /proc/meminfo | awk '{ print $2}'`
-MEMORY=$($total_r2am/1024)
+MEMORY=$(($total_r2am/1024))
 # VPS ISP INFORMATION
 ITAM='\033[0;30m'
 echo -e "$ITAM"
@@ -41,15 +41,15 @@ NC='\033[0m'
 echo -e "$NC"
 # Download
 download=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev  | awk '{print $2}' | paste -sd+ - | bc`
-downloadsize=$($download/1073741824)
+downloadsize=$(($download/1073741824))
 
 # Upload
 upload=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev | awk '{print $10}' | paste -sd+ - | bc`
-uploadsize=$($upload/1073741824)
+uploadsize=$(($upload/1073741824))
 
 # Total Ram
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
-totalram=$($total_ram/1024)
+totalram=$(($total_ram/1024))
 
 # Tipe Processor
 totalcore="$(grep -c "^processor" /proc/cpuinfo)" 
@@ -77,7 +77,7 @@ basedong=$ID
 
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
-cpu_usage="$(${cpu_usage1/\.*} / ${corediilik:-1})"
+cpu_usage=$((cpu_usage1 / ${corediilik:-1}))
 cpu_usage+=" %"
 
 # OS Uptime
