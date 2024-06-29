@@ -737,8 +737,8 @@ cat> /etc/xray/mkcp.json << END
 }
 END
 
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6262 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6363 -j ACCEPT
